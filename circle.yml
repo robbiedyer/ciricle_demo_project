@@ -18,6 +18,8 @@ database:
 compile:
   override:
     - bin/parallel-lint src
+    - app/console lint:twig app
+    - app/console lint:yaml app
 
 
 test:
