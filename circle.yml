@@ -12,7 +12,7 @@ dependencies:
 
 database:
   override:
-    - mysql -u ubuntu -e "CREATE DATABASE testdb;"
+    - mysql -u root -e "CREATE DATABASE testdb;"
     - app/console doctrine:schema:create --env=test
 
 test:
