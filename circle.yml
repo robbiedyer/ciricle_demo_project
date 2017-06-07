@@ -1,0 +1,14 @@
+machine:
+  timezone: Europe/London
+  php:
+    version: 5.6.22
+
+dependencies:
+  pre:
+    - echo "date.timezone = Europe/London" >> /opt/circleci/php/$(phpenv global)/etc/php.ini
+
+test:
+  pre:
+    - mkdir -p $CIRCLE_TEST_REPORTS/phpunit
+  override:
+    - bin/phpunit -c app/phpunit.xml.dist --log-junit $CIRCLE_TEST_REPORTS/phpunit/junit.xml -d memory_limit=512M
