@@ -1,6 +1,18 @@
 imports:
     - { resource: config_dev.yml }
 
+
+# Doctrine Configuration
+doctrine:
+    dbal:
+        driver: pdo_mysql
+        host: '%test_database_host%'
+        port: '%test_database_port%'
+        dbname: '%test_database_name%'
+        user: '%test_database_user%'
+        password: '%test_database_password%'
+        charset: UTF8
+
 framework:
     test: ~
     session:
@@ -14,3 +26,4 @@ web_profiler:
 
 swiftmailer:
     disable_delivery: true
+
