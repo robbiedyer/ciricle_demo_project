@@ -1,0 +1,14 @@
+machine:
+  timezone: Europe/London
+  php:
+    version: 7.1.5
+
+dependancies:
+  pre:
+    - echo "date.timezone = Europe/London" >> /opt/circleci/php/$(phpenv global)/etc/php.ini
+
+test:
+  pre:
+    - mkdir -p $CIRCLE_TEST_REPORTS/phpunit
+  override:
+    - bin/phpunit -c app/phpunit.xml.dist --log-junit $CIRCLE_TEST_REPORTS/phpunit/junit/xml
