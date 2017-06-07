@@ -4,6 +4,8 @@ machine:
     version: 5.6.22
 
 dependencies:
+  cache_directories:
+    - "~/.cache/composer"
   pre:
     - echo "date.timezone = Europe/London" >> /opt/circleci/php/$(phpenv global)/etc/php.ini
 
