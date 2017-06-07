@@ -15,6 +15,11 @@ database:
     - mysql -u root -e "CREATE DATABASE testdb;"
     - app/console doctrine:schema:create --env=test
 
+compile:
+  override:
+    - bin/parallel-lint src
+
+
 test:
   pre:
     - mkdir -p $CIRCLE_TEST_REPORTS/phpunit
