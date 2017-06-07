@@ -2,7 +2,6 @@
 
 namespace AppBundle\Tests\Unit\Model;
 
-
 use AppBundle\Model\EmailAddress;
 use PHPUnit_Framework_TestCase;
 

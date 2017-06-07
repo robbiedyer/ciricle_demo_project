@@ -2,7 +2,6 @@
 
 namespace AppBundle\Repository;
 
-
 use AppBundle\Entity\Person;
 use AppBundle\Model\EmailAddress;
 use Doctrine\ORM\EntityManagerInterface;
