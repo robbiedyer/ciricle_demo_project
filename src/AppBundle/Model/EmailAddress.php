@@ -4,7 +4,6 @@ namespace AppBundle\Model;
 
 use Exception;
 
-
 /**
  * Represents an email address
  */

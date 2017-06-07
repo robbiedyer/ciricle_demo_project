@@ -2,7 +2,6 @@
 
 namespace AppBundle\Tests\Integration\Repository;
 
-
 use AppBundle\Entity\Person;
 use AppBundle\Model\EmailAddress;
 use AppBundle\Repository\PersonRepository;
@@ -10,7 +9,6 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class PersonRepositoryTest extends WebTestCase
 {
-
     const NAME = "Bob";
     const LOWER_CASE_EMAIL_ADDRESS = "bob@example.com";
     const UPPER_CASE_EMAIL_ADDRESS = "BOB@EXAMPLE.COM";
@@ -39,7 +37,5 @@ class PersonRepositoryTest extends WebTestCase
         // Lookup person
         $actualPerson = $personRepository->findByEmailAddress(new EmailAddress(self::UPPER_CASE_EMAIL_ADDRESS));
         $this->assertEquals(self::NAME, $actualPerson->getName());
-
     }
-
 }

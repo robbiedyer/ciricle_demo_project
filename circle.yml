@@ -21,7 +21,8 @@ compile:
     - app/console lint:twig app
     - app/console lint:yaml app
     - bin/var-dump-check --ladybug --no-colors src
-    
+    - bin/php-cs-fixer fix --dry-run src
+
 test:
   pre:
     - mkdir -p $CIRCLE_TEST_REPORTS/phpunit

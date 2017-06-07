@@ -2,7 +2,6 @@
 
 namespace AppBundle\Entity;
 
-
 use AppBundle\Model\EmailAddress;
 use Doctrine\ORM\Mapping\Column;
 use Doctrine\ORM\Mapping\Entity;
@@ -87,5 +86,4 @@ class Person
     {
         $this->emailAddress = $emailAddress->getEmailAddress();
     }
-
 }
