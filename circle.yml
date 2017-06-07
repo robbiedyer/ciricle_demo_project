@@ -8,6 +8,12 @@ dependencies:
     - "~/.cache/composer"
   pre:
     - echo "date.timezone = Europe/London" >> /opt/circleci/php/$(phpenv global)/etc/php.ini
+    - cp app/config/parameters.yml.circle app/config/parameters.yml
+
+database:
+  override:
+    - mysql -u ubuntu -e "CREATE DATABASE testdb;"
+    - app/console doctrine:schema:create --env=test
 
 test:
   pre:
